@@ -16,6 +16,7 @@
             justify-content: center;
             text-align: center;
             width: 100%;
+            flex-wrap: wrap;
         }
 
         .page1,
@@ -79,7 +80,12 @@
     </div>
     <script>
         function scrollToTop() {
-            document.body.scrollTop = 0;
+            window.scroll({
+                behavior: 'smooth',
+                top: 0,
+                left: 0
+            });
+            
             document.documentElement.scrollTop = 0;
         }
         function changePage1() {
