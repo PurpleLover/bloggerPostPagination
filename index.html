@@ -22,7 +22,9 @@
         .page1,
         .page2,
         .page3,
-        .page4 {
+        .page4,
+        .page5,
+        .page6 {
             padding: 8px 16px;
             margin: 10px;
             border: 2px solid #25a186;
@@ -35,7 +37,9 @@
         .page1:hover,
         .page2:hover,
         .page3:hover,
-        .page4:hover {
+        .page4:hover,
+        .page5:hover,
+        .page6:hover {
             background: none repeat scroll 0 0 #25a186;
             color: #fff;
             text-decoration: none;
@@ -47,11 +51,6 @@
             color: #fff;
         }
     </style>
-    <div>
-        <!-- Add Author Information Here -->
-
-        <!-- End Here -->
-    </div>
     <div id="content1" style="display:block">
         <!-- Add Here -->
 
@@ -72,11 +71,23 @@
 
         <!-- End Here -->
     </div>
+    <div id="content5" style="display: none">
+        <!-- Add Here -->
+
+        <!-- End Here -->
+    </div>
+    <div id="content6" style="display: none">
+        <!-- Add Here -->
+
+        <!-- End Here -->
+    </div>
     <div class="pagination">
         <button class="page1 active" onclick="changePage1()">1</button>
         <button class="page2" onclick="changePage2()">2</button>
         <button class="page3" onclick="changePage3()">3</button>
         <button class="page4" onclick="changePage4()">4</button>
+        <button class="page5" onclick="changePage5()">5</button>
+        <button class="page6" onclick="changePage6()">6</button>
     </div>
     <script>
         function scrollToTop() {
@@ -96,6 +107,8 @@
             document.getElementById('content2').style.display = 'none';
             document.getElementById('content3').style.display = 'none';
             document.getElementById('content4').style.display = 'none';
+            document.getElementById('content5').style.display = 'none';
+            document.getElementById('content6').style.display = 'none';
             // Mark the selected page
             current[0].className = current[0].className.replace(' active', '');
             document.getElementsByClassName('page1')[0].className += ' active';
@@ -107,6 +120,8 @@
             document.getElementById('content2').style.display = 'block';
             document.getElementById('content3').style.display = 'none';
             document.getElementById('content4').style.display = 'none';
+            document.getElementById('content5').style.display = 'none';
+            document.getElementById('content6').style.display = 'none';
 
             current[0].className = current[0].className.replace(' active', '');
             document.getElementsByClassName('page2')[0].className += ' active';
@@ -118,6 +133,8 @@
             document.getElementById('content2').style.display = 'none';
             document.getElementById('content3').style.display = 'block';
             document.getElementById('content4').style.display = 'none';
+            document.getElementById('content5').style.display = 'none';
+            document.getElementById('content6').style.display = 'none';
 
             current[0].className = current[0].className.replace(' active', '');
             document.getElementsByClassName('page3')[0].className += ' active';
@@ -129,9 +146,37 @@
             document.getElementById('content2').style.display = 'none';
             document.getElementById('content3').style.display = 'none';
             document.getElementById('content4').style.display = 'block';
+            document.getElementById('content5').style.display = 'none';
+            document.getElementById('content6').style.display = 'none';
 
             current[0].className = current[0].className.replace(' active', '');
             document.getElementsByClassName('page4')[0].className += ' active';
+        }
+        function changePage5() {
+            var current = document.getElementsByClassName('active');
+            if (document.getElementsByClassName('page5')[0].className.length < 6) scrollToTop();
+            document.getElementById('content1').style.display = 'none';
+            document.getElementById('content2').style.display = 'none';
+            document.getElementById('content3').style.display = 'none';
+            document.getElementById('content4').style.display = 'none';
+            document.getElementById('content5').style.display = 'block';
+            document.getElementById('content6').style.display = 'none';
+
+            current[0].className = current[0].className.replace(' active', '');
+            document.getElementsByClassName('page5')[0].className += ' active';
+        }
+        function changePage6() {
+            var current = document.getElementsByClassName('active');
+            if (document.getElementsByClassName('page6')[0].className.length < 6) scrollToTop();
+            document.getElementById('content1').style.display = 'none';
+            document.getElementById('content2').style.display = 'none';
+            document.getElementById('content3').style.display = 'none';
+            document.getElementById('content4').style.display = 'none';
+            document.getElementById('content5').style.display = 'none';
+            document.getElementById('content6').style.display = 'block';
+
+            current[0].className = current[0].className.replace(' active', '');
+            document.getElementsByClassName('page6')[0].className += ' active';
         }
     </script>
     <!-- Blog Post End Here -->
